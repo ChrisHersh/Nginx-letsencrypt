@@ -63,8 +63,9 @@ def obtain_cert(cert_cmd):
 def build_cert_command(server_names, email):
     email = get_user_email(email)
 
-    command_string_list = ["sudo", "certbot", "certonly", "--standalone",
-                           "--expand", "--agree-tos", "--email", email]
+    command_string_list = ["sudo", "certbot", "certonly", "--standalone", 
+            '--keep-until-expiring', "--expand", "--agree-tos", 
+            "-q", "--email", email]
 
     server_names_command = []
     for name in server_names:
@@ -91,10 +92,6 @@ def get_all_config_server_names(config_names):
 
     # flatten list of server names and remove any in the exclusion list
     server_names = [name for name in server_names if name not in exclude_list]
-
-    with open("server_names.txt") as f:
-        for x in server_names:
-            f.write(x)
 
     return server_names
 

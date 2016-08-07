@@ -10,7 +10,7 @@ def main(parser):
     if args.renew:
         renew()
     else:
-        create_cert(args.email)
+        create_cert.create_cert(args.email)
 
 
 # Create the args for the help and later processing

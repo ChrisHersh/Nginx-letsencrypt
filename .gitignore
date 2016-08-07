@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+.idea/.name
+.idea/*.xml
+.idea/copyright/profiles_settings.xml
+.idea/Nginx-letsencrypt.iml
